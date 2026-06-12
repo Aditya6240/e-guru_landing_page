@@ -1,0 +1,2229 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tender Guru – महाराष्ट्रातील सर्वात विश्वासू Tender Training Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --orange: #E8640A;
+            --orange-dark: #C4500A;
+            --orange-light: #F97316;
+            --orange-pale: #FFF7ED;
+            --orange-soft: #FFEDD5;
+            --orange-medium: #FED7AA;
+            --saffron: #FB923C;
+            --amber: #F59E0B;
+            --dark: #1C0A00;
+            --text: #3D1F00;
+            --muted: #78554A;
+            --border: #F5D0B0;
+            --white: #FFFFFF;
+            --grey-bg: #FFFAF5;
+            --radius: 16px;
+            --radius-sm: 10px;
+            --shadow: 0 4px 24px rgba(232, 100, 10, 0.10);
+            --shadow-lg: 0 8px 40px rgba(232, 100, 10, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+            padding-bottom: 72px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .nav-logo {
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            color: var(--orange);
+            letter-spacing: -0.3px;
+            white-space: nowrap;
+        }
+
+        .nav-logo span {
+            color: var(--dark);
+        }
+
+        .nav-cta {
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 0 2px 12px rgba(232, 100, 10, 0.25);
+        }
+
+        .nav-cta:hover {
+            background: var(--orange-dark);
+            transform: translateY(-1px);
+        }
+
+        /* ── HERO ── */
+        #hero {
+            padding: 96px 20px 64px;
+            background: linear-gradient(150deg, #FFF7ED 0%, #FFFAF5 55%, #FFF3E0 100%);
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media(min-width:768px) {
+            .hero-inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 56px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Hero content center */
+            .hero-inner {
+                text-align: center;
+            }
+
+            .hero-badge {
+                margin: 0 auto 20px;
+            }
+
+            .hero-h1 {
+                text-align: center;
+            }
+
+            .hero-sub {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-btns {
+                justify-content: center;
+                align-items: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .hero-stat-num,
+            .hero-stat-label {
+                text-align: center;
+            }
+
+            .hero-img-wrap {
+                margin-top: 20px;
+            }
+
+            .nav {
+                justify-content: center;
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--orange-soft);
+            color: var(--orange-dark);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 7px 16px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            border: 1px solid var(--orange-medium);
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .hero-h1 {
+            font-size: clamp(1.9rem, 5.5vw, 3rem);
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.18;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+
+        .hero-h1 em {
+            font-style: normal;
+            color: var(--orange);
+        }
+
+        .hero-sub {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            color: var(--muted);
+            line-height: 1.78;
+            margin-bottom: 28px;
+            max-width: 500px;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+            padding: 13px 26px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+            box-shadow: 0 4px 20px rgba(232, 100, 10, 0.30);
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--orange-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost {
+            background: white;
+            color: var(--text);
+            padding: 13px 26px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1.5px solid var(--border);
+            cursor: pointer;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--orange);
+            color: var(--orange);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat-num {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(1.4rem, 4vw, 1.7rem);
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .hero-stat-label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            font-weight: 500;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* HERO IMAGE */
+        .hero-img-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-img-blob {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            background: radial-gradient(ellipse, var(--orange-soft) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: scale(1.3);
+            z-index: 0;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+        }
+
+        /* ─── IMAGE PLACEHOLDER TEMPLATE ─── */
+        /* Replace the background-image URL below with your actual image */
+        .hero-img-placeholder {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(232, 100, 10, 0.18);
+            aspect-ratio: 4/5;
+            background-color: var(--orange-soft);
+
+            /* ══ PASTE YOUR MENTOR IMAGE URL HERE ══ */
+            background-image: url('asset/image.png');
+            background-size: cover;
+            background-position: center top;
+        }
+
+        .hero-img-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px;
+            background: linear-gradient(to top, rgba(28, 10, 0, 0.85) 0%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .hero-img-name {
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .hero-img-title {
+            font-size: 0.78rem;
+            color: #FFEDD5;
+        }
+
+        .hero-badge-corner {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: var(--orange);
+            color: white;
+            border-radius: 12px;
+            padding: 8px 12px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+            box-shadow: 0 4px 16px rgba(232, 100, 10, 0.4);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* ── TRUST STRIP ── */
+        #trust {
+            padding: 24px 20px;
+            background: var(--grey-bg);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trust-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 8px 16px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--muted);
+            padding: 7px 14px;
+            border-radius: 50px;
+            background: white;
+            border: 1px solid var(--border);
+            white-space: nowrap;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .trust-item .check {
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        .trust-text {
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-top: 6px;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* ── SECTIONS COMMON ── */
+        section {
+            padding: 64px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: var(--orange-pale);
+            color: var(--orange-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 14px;
+            border: 1px solid var(--orange-medium);
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 3.8vw, 2.3rem);
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.22;
+            margin-bottom: 12px;
+        }
+
+        .section-sub {
+            font-size: 0.95rem;
+            color: var(--muted);
+            line-height: 1.75;
+            max-width: 580px;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* ── WHO IS THIS FOR ── */
+        #audience {
+            background: white;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-top: 36px;
+        }
+
+        @media(min-width:640px) {
+            .audience-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(min-width:900px) {
+            .audience-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .audience-card {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px 18px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--orange), var(--saffron));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .audience-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--orange-medium);
+        }
+
+        .audience-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .audience-icon {
+            font-size: 1.9rem;
+            margin-bottom: 10px;
+        }
+
+        .audience-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .audience-card p {
+            font-size: 0.8rem;
+            color: var(--muted);
+            line-height: 1.6;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* ── FAILURE ── */
+        #failure {
+            background: var(--grey-bg);
+        }
+
+        .failure-steps {
+            margin-top: 40px;
+            max-width: 580px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .failure-step {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .step-line {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .step-dot {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.82rem;
+            color: var(--muted);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+
+        .failure-step:hover .step-dot {
+            background: var(--orange);
+            color: white;
+            border-color: var(--orange);
+        }
+
+        .step-connector {
+            width: 2px;
+            height: 36px;
+            background: var(--border);
+        }
+
+        .step-body {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px 18px;
+            margin-bottom: 10px;
+            flex: 1;
+            transition: all 0.3s;
+        }
+
+        .failure-step:hover .step-body {
+            border-color: var(--orange-medium);
+            box-shadow: var(--shadow);
+        }
+
+        .step-body p {
+            font-size: 0.88rem;
+            color: var(--text);
+            line-height: 1.65;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .step-body strong {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .failure-highlight {
+            margin-top: 28px;
+            background: linear-gradient(135deg, var(--orange), var(--saffron));
+            border-radius: var(--radius);
+            padding: 22px 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: white;
+        }
+
+        .failure-highlight p {
+            font-size: 0.92rem;
+            font-weight: 600;
+            line-height: 1.55;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* ── LEARN ── */
+        #learn {
+            background: white;
+        }
+
+        .learn-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 36px;
+        }
+
+        @media(min-width:640px) {
+            .learn-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(min-width:900px) {
+            .learn-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .learn-card {
+            background: var(--grey-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            transition: all 0.25s;
+        }
+
+        .learn-card:hover {
+            background: var(--orange-pale);
+            border-color: var(--orange-medium);
+            transform: translateY(-2px);
+        }
+
+        .learn-check {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.7rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .learn-card h4 {
+            font-size: 0.87rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 2px;
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .learn-card p {
+            font-size: 0.76rem;
+            color: var(--muted);
+            line-height: 1.5;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* ── NUMBERS ── */
+        #numbers {
+            background: linear-gradient(135deg, #1C0A00 0%, #6B2400 60%, #9A3412 100%);
+            color: white;
+        }
+
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4px;
+            margin-top: 36px;
+        }
+
+        @media(min-width:640px) {
+            .numbers-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .number-item {
+            text-align: center;
+            padding: 32px 12px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .number-item:last-child {
+            border-right: none;
+        }
+
+        .number-val {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(2rem, 7vw, 3rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .number-val span {
+            color: var(--saffron);
+        }
+
+        .number-label {
+            font-size: 0.82rem;
+            color: #FFEDD5;
+            font-weight: 500;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* ── MENTOR ── */
+        #mentor {
+            background: var(--grey-bg);
+        }
+
+        .mentor-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 36px;
+            align-items: center;
+        }
+
+        @media(min-width:768px) {
+            .mentor-inner {
+                grid-template-columns: 1fr 1.2fr;
+            }
+        }
+
+        /* ─── MENTOR IMAGE PLACEHOLDER ─── */
+        .mentor-img-wrap {
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            max-width: 360px;
+            margin: 0 auto;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(232, 100, 10, 0.18);
+            background-color: var(--orange-soft);
+
+            /* ══ PASTE HARSHAD BARGE IMAGE URL HERE ══ */
+            background-image: url('asset/image.png');
+            background-size: cover;
+            background-position: center top;
+            position: relative;
+        }
+
+        .mentor-img-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 14px 16px;
+            background: linear-gradient(to top, rgba(28, 10, 0, 0.88) 0%, transparent 100%);
+        }
+
+        .mentor-img-caption h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 2px;
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .mentor-img-caption p {
+            font-size: 0.75rem;
+            color: #FFEDD5;
+        }
+
+        /* Fallback icon shown only when no bg-image set */
+        .mentor-img-wrap[style*="asset/image.png"] .mentor-fallback,
+        .mentor-img-wrap:not([style]) .mentor-fallback {
+            display: flex;
+        }
+
+        .mentor-fallback {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            gap: 10px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .mentor-avatar-lg {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: var(--orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 8px 28px rgba(232, 100, 10, 0.3);
+        }
+
+        .mentor-desc {
+            font-size: 0.93rem;
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 22px;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .mentor-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--orange-pale);
+            color: var(--orange-dark);
+            border: 1px solid var(--orange-medium);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* ── TESTIMONIALS ── */
+        #testimonials {
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            margin-top: 36px;
+        }
+
+        @media(min-width:640px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(min-width:900px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .testimonial-card {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+            border-color: var(--orange-medium);
+        }
+
+        .testimonial-stars {
+            color: var(--amber);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-quote {
+            font-size: 0.88rem;
+            color: var(--text);
+            line-height: 1.72;
+            margin-bottom: 14px;
+            font-style: italic;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .author-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--orange-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--orange-dark);
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .author-name {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--dark);
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .author-loc {
+            font-size: 0.75rem;
+            color: var(--muted);
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* ── GALLERY ── */
+        #gallery {
+            background: var(--grey-bg);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 36px;
+        }
+
+        @media(min-width:640px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Each gallery item – paste your workshop photo URLs here */
+        .gallery-item {
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background-color: var(--orange-soft);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .gallery-item:first-child {
+            grid-column: span 2;
+            aspect-ratio: 16/7;
+        }
+
+        @media(min-width:640px) {
+            .gallery-item:first-child {
+                grid-column: span 2;
+            }
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-label {
+            width: 100%;
+            padding: 8px 12px;
+            background: linear-gradient(to top, rgba(28, 10, 0, 0.7), transparent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* Gallery placeholders when no image set */
+        .gallery-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 1.8rem;
+        }
+
+        .gallery-placeholder span {
+            font-size: 0.72rem;
+            color: var(--muted);
+            font-weight: 600;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* ── BENEFITS ── */
+        #benefits {
+            background: white;
+        }
+
+        .benefits-box {
+            background: linear-gradient(135deg, var(--orange-pale) 0%, white 100%);
+            border: 1.5px solid var(--orange-medium);
+            border-radius: 20px;
+            padding: 28px 20px;
+            margin-top: 36px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        @media(min-width:640px) {
+            .benefits-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .benefit-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: var(--radius-sm);
+            background: var(--orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(232, 100, 10, 0.2);
+        }
+
+        .benefit-text {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.3;
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .benefit-sub {
+            font-size: 0.72rem;
+            color: var(--muted);
+            margin-top: 2px;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* ── PRICING ── */
+        #pricing {
+            background: var(--grey-bg);
+        }
+
+        .pricing-card {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 24px;
+            padding: 32px 24px;
+            max-width: 460px;
+            margin: 36px auto 0;
+            box-shadow: 0 8px 48px rgba(232, 100, 10, 0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--orange), var(--saffron), var(--amber));
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: #FEF3C7;
+            color: #B45309;
+            font-size: 0.76rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 50px;
+            margin-bottom: 18px;
+            border: 1px solid #FDE68A;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .pricing-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .pricing-price {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(2.2rem, 8vw, 2.8rem);
+            font-weight: 800;
+            color: var(--orange);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .pricing-original {
+            font-size: 0.88rem;
+            color: var(--muted);
+            text-decoration: line-through;
+            margin-bottom: 6px;
+        }
+
+        .pricing-bonus {
+            background: var(--orange-pale);
+            color: var(--orange-dark);
+            border: 1px solid var(--orange-medium);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 14px 0 22px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .pricing-cta {
+            width: 100%;
+            background: var(--orange);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50px;
+            font-size: 0.98rem;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+            box-shadow: 0 4px 24px rgba(232, 100, 10, 0.3);
+            transition: all 0.2s;
+            margin-bottom: 18px;
+        }
+
+        .pricing-cta:hover {
+            background: var(--orange-dark);
+            transform: translateY(-2px);
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pay-chip {
+            background: var(--grey-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 5px 11px;
+            font-size: 0.73rem;
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        /* ── FAQ ── */
+        #faq {
+            background: white;
+        }
+
+        .faq-list {
+            margin-top: 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .faq-item {
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+
+        .faq-item.open {
+            border-color: var(--orange-medium);
+        }
+
+        .faq-q {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 18px;
+            cursor: pointer;
+            background: white;
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--dark);
+            gap: 12px;
+            user-select: none;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .faq-q:hover {
+            background: var(--grey-bg);
+        }
+
+        .faq-icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--orange-pale);
+            color: var(--orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: all 0.25s;
+        }
+
+        .faq-item.open .faq-icon {
+            background: var(--orange);
+            color: white;
+            transform: rotate(45deg);
+        }
+
+        .faq-a {
+            display: none;
+            padding: 0 18px 16px;
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.72;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .faq-item.open .faq-a {
+            display: block;
+        }
+
+        /* ── FINAL CTA ── */
+        #final-cta {
+            background: linear-gradient(135deg, #1C0A00 0%, #7C2D12 50%, #C2410C 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .final-cta-title {
+            font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1.22;
+            margin-bottom: 14px;
+        }
+
+        .final-cta-sub {
+            font-size: 0.95rem;
+            color: #FFEDD5;
+            line-height: 1.75;
+            margin-bottom: 32px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .final-cta-btns {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--orange);
+            padding: 13px 26px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white;
+            padding: 13px 26px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .btn-wa:hover {
+            background: #1EB358;
+            transform: translateY(-2px);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #1C0A00;
+            color: #D6A07A;
+            padding: 44px 20px 28px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+            margin-bottom: 28px;
+        }
+
+        @media(min-width:640px) {
+            .footer-top {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+        }
+
+        .footer-brand h3 {
+            font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            font-size: 0.83rem;
+            line-height: 1.72;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .footer-col h4 {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .footer-link {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.82rem;
+            color: #D6A07A;
+            margin-bottom: 9px;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .social-btn {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-btn:hover {
+            background: var(--orange);
+            border-color: var(--orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 20px;
+            font-size: 0.76rem;
+            text-align: center;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* ── FLOATING / STICKY ── */
+        .wa-float {
+            position: fixed;
+            bottom: 88px;
+            right: 16px;
+            z-index: 199;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.1);
+        }
+
+        .sticky-bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 198;
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        .sticky-bottom .btn-primary {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .sticky-cta-text {
+            font-size: 0.76rem;
+            color: var(--muted);
+            white-space: nowrap;
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.22s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.34s;
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">Tender<span>Guru</span></div>
+        <a href="#pricing" class="nav-cta">जागा बुक करा →</a>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-inner">
+
+                <div class="fade-up">
+                    <div class="hero-badge">🚀 महाराष्ट्रातील सर्वात विश्वासू Tender Training Platform</div>
+                    <h1 class="hero-h1">
+                        सरकारी Tender मधून<br>
+                        <em>यशस्वी व्यवसाय</em><br>
+                        सुरू करा
+                    </h1>
+                    <p class="hero-sub">
+                        Tender Filing, GeM Portal, E-Auction आणि सरकारी व्यवसायाच्या संधी — सर्व काही practical
+                        training द्वारे शिका.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#pricing" class="btn-primary">📋 आजच जागा बुक करा</a>
+                        <a href="#testimonials" class="btn-ghost">▶ यशाच्या गोष्टी पाहा</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div>
+                            <div class="hero-stat-num">16+</div>
+                            <div class="hero-stat-label">वर्षांचा अनुभव</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat-num">१ लाख+</div>
+                            <div class="hero-stat-label">उद्योजक प्रशिक्षित</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat-num">1000+</div>
+                            <div class="hero-stat-label">यशोगाथा</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MENTOR IMAGE — paste your URL below -->
+                <div class="hero-img-wrap fade-up delay-2">
+                    <div class="hero-img-blob"></div>
+                    <div class="hero-img-placeholder">  
+
+                        <!-- Fallback shown when no image is set -->
+                        <div class="mentor-fallback" style="display:flex;">
+                            <!-- <div class="mentor-avatar-lg">👨‍💼</div> -->
+                            <!-- <div style="text-align:center;">
+                                <div
+                                    style="font-family:'Noto Sans Devanagari',sans-serif;font-weight:800;font-size:1rem;color:var(--dark);">
+                                    Harshad Barge</div>
+                                <div style="font-size:0.78rem;color:var(--muted);">Founder, Tender Guru · 16+ वर्षे
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="hero-img-overlay">
+                            <div class="hero-img-name">Harshad Barge</div>
+                            <div class="hero-img-title">Tender Expert &amp; Mentor · 16+ Years</div>
+                        </div>
+                        <!-- <div class="hero-badge-corner">🏆 १,०० ,०००+<br>प्रशिक्षित</div> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section id="trust">
+        <div class="container">
+            <div class="trust-inner">
+                <div class="trust-item"><span class="check">✓</span> Government Tender</div>
+                <div class="trust-item"><span class="check">✓</span> GeM Portal</div>
+                <div class="trust-item"><span class="check">✓</span> E-Auction</div>
+                <div class="trust-item"><span class="check">✓</span> MSME सहाय्य</div>
+                <div class="trust-item"><span class="check">✓</span> व्यवसाय प्रशिक्षण</div>
+                <p class="trust-text">महाराष्ट्रभर उद्योजकांनी विश्वास ठेवलेले व्यासपीठ.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO IS THIS FOR -->
+    <section id="audience">
+        <div class="container">
+            <div style="text-align:center;">
+                <span class="section-label">हे कोणासाठी आहे?</span>
+                <h2 class="section-title">हे Workshop तुमच्यासाठीच आहे</h2>
+                <p class="section-sub" style="margin:0 auto;">नवीन सुरुवात करत असाल किंवा आधीच व्यवसायात असाल — हे
+                    workshop तुम्हाला पुढे घेऊन जाईल.</p>
+            </div>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-icon">🏗️</div>
+                    <h3>Civil Contractors</h3>
+                    <p>सरकारी बांधकाम Tender कसे शोधायचे, भरायचे आणि जिंकायचे ते शिका.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">⚙️</div>
+                    <h3>Engineers</h3>
+                    <p>तुमच्या technical कौशल्याचा वापर करून सरकारी infrastructure projects साठी bid करा.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">💼</div>
+                    <h3>व्यावसायिक</h3>
+                    <p>सरकारी खरेदी संधींमध्ये प्रवेश करून तुमचा व्यवसाय वाढवा.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">🏛️</div>
+                    <h3>सरकारी पुरवठादार</h3>
+                    <p>GeM Portal वर नोंदणी करून सरकारी विभागांना वस्तू व सेवा पुरवा.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY PEOPLE FAIL -->
+    <section id="failure">
+        <div class="container">
+            <span class="section-label">मुख्य समस्या</span>
+            <h2 class="section-title">बहुतेक लोक Tender<br>का जिंकत नाहीत?</h2>
+            <p class="section-sub">प्रक्रिया क्लिष्ट वाटते — पण ती असणे गरजेचे नाही.</p>
+            <div class="failure-steps">
+                <div class="failure-step">
+                    <div class="step-line">
+                        <div class="step-dot">01</div>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-body">
+                        <p><strong>Tender कुठे प्रसिद्ध होतात हे माहीत नाही</strong><br>कोणत्या portals वर सरकारी
+                            Tender listed होतात याची बहुतेकांना माहिती नसते.</p>
+                    </div>
+                </div>
+                <div class="failure-step">
+                    <div class="step-line">
+                        <div class="step-dot">02</div>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-body">
+                        <p><strong>Documents समजत नाहीत</strong><br>Tender documents मध्ये complex terms, अटी आणि
+                            technical specifications असतात.</p>
+                    </div>
+                </div>
+                <div class="failure-step">
+                    <div class="step-line">
+                        <div class="step-dot">03</div>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-body">
+                        <p><strong>Technical चुकांमुळे अर्ज रद्द होतो</strong><br>एक document error किंवा deadline
+                            चुकल्याने disqualification होते.</p>
+                    </div>
+                </div>
+                <div class="failure-step">
+                    <div class="step-line">
+                        <div class="step-dot">04</div>
+                    </div>
+                    <div class="step-body">
+                        <p><strong>सुरुवातीलाच ते हार मानतात</strong><br>गोंधळ आणि निराशेमुळे बहुतेक जण ही संधी
+                            सोडून देतात.</p>
+                    </div>
+                </div>
+                <div class="failure-highlight">
+                    <div style="font-size:1.8rem;flex-shrink:0;">🎯</div>
+                    <p>Tender Guru मध्ये या प्रत्येक चुका टाळायला शिकवले जाते — step-by-step, practical demos सह.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU LEARN -->
+    <section id="learn">
+        <div class="container">
+            <span class="section-label">अभ्यासक्रम</span>
+            <h2 class="section-title">तुम्ही काय शिकणार?</h2>
+            <p class="section-sub">Tender शोधण्यापासून पहिली bid जिंकेपर्यंत — संपूर्ण practical curriculum.</p>
+            <div class="learn-grid">
+                <div class="learn-card">
+                    <div class="learn-check">✓</div>
+                    <div>
+                        <h4>Tender शोध</h4>
+                        <p>योग्य portals वर तुमच्या व्यवसायासाठी योग्य Tender शोधा.</p>
+                    </div>
+                </div>
+                <div class="learn-card">
+                    <div class="learn-check">✓</div>
+                    <div>
+                        <h4>Tender Analysis</h4>
+                        <p>तज्ज्ञाप्रमाणे Tender documents वाचा आणि मूल्यांकन करा.</p>
+                    </div>
+                </div>
+                <div class="learn-card">
+                    <div class="learn-check">✓</div>
+                    <div>
+                        <h4>Document तयारी</h4>
+                        <p>shortlist होणारे error-free Tender documents तयार करा.</p>
+                    </div>
+                </div>
+                <div class="learn-card">
+                    <div class="learn-check">✓</div>
+                    <div>
+                        <h4>Bid Submission</h4>
+                        <p>सरकारी portals वर चुकांशिवाय bids योग्यरित्या सबमिट करा.</p>
+                    </div>
+                </div>
+                <div class="learn-card">
+                    <div class="learn-check">✓</div>
+                    <div>
+                        <h4>GeM Registration</h4>
+                        <p>GeM Portal नोंदणी आणि setup step-by-step करा.</p>
+                    </div>
+                </div>
+                <div class="learn-card">
+                    <div class="learn-check">✓</div>
+                    <div>
+                        <h4>E-Auction Process</h4>
+                        <p>सरकारी e-auctions मध्ये आत्मविश्वासाने सहभागी व्हा.</p>
+                    </div>
+                </div>
+                <div class="learn-card">
+                    <div class="learn-check">✓</div>
+                    <div>
+                        <h4>MSME फायदे</h4>
+                        <p>Tendering मध्ये सर्व MSME advantages आणि exemptions वापरा.</p>
+                    </div>
+                </div>
+                <div class="learn-card">
+                    <div class="learn-check">✓</div>
+                    <div>
+                        <h4>Contractor नोंदणी</h4>
+                        <p>सरकारी विभागांकडे approved contractor म्हणून नोंदणी करा.</p>
+                    </div>
+                </div>
+                <div class="learn-card">
+                    <div class="learn-check">✓</div>
+                    <div>
+                        <h4>Live Practical Demo</h4>
+                        <p>सुरुवातीपासून शेवटपर्यंत संपूर्ण प्रक्रियेचे hands-on demonstration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUMBERS -->
+    <section id="numbers">
+        <div class="container" style="text-align:center;">
+            <span class="section-label"
+                style="background:rgba(255,255,255,0.12);color:#FFEDD5;border:1px solid rgba(255,255,255,0.2);">आमचा
+                प्रभाव</span>
+            <h2 class="section-title" style="color:white;margin-top:12px;">आकडे बोलतात</h2>
+            <div class="numbers-grid">
+                <div class="number-item">
+                    <div class="number-val">१<span>लाख+</span></div>
+                    <div class="number-label">उद्योजक मार्गदर्शित</div>
+                </div>
+                <div class="number-item">
+                    <div class="number-val">16<span>+</span></div>
+                    <div class="number-label">वर्षांचा अनुभव</div>
+                </div>
+                <div class="number-item">
+                    <div class="number-val">1000<span>+</span></div>
+                    <div class="number-label">Workshop Sessions</div>
+                </div>
+                <div class="number-item">
+                    <div class="number-val">500<span>+</span></div>
+                    <div class="number-label">यशस्वी व्यवसाय</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENTOR -->
+    <section id="mentor">
+        <div class="container">
+            <div class="mentor-inner">
+
+                <!-- MENTOR PHOTO — paste Harshad Barge photo URL in CSS or inline style below -->
+                <div class="mentor-img-wrap" style="background-image:url('asset/image.png');">
+
+                    <div class="mentor-img-caption">
+                        <h3>Harshad Barge</h3>
+                        <p>Founder, Tender Guru · 16+ Years Expert</p>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="section-label">तुमचे मार्गदर्शक</span>
+                    <h2 class="section-title">Harshad Barge यांच्याबद्दल</h2>
+                    <p class="mentor-desc">
+                        सरकारी contracting आणि e-tendering मध्ये 16+ वर्षांच्या प्रत्यक्ष अनुभवासह, Harshad Barge
+                        यांनी १ लाखाहून अधिक उद्योजकांना सरकारी व्यवसाय क्षेत्रात यशस्वीरित्या प्रवेश करण्यास मदत
+                        केली आहे.
+                        <br><br>
+                        Tender Guru द्वारे त्यांनी महाराष्ट्रभर 1000+ workshops आयोजित केले आहेत — पहिल्यांदा उद्योग
+                        सुरू करणाऱ्यांपासून ते अनुभवी contractors पर्यंत सर्वांसाठी सरकारी Tendering सोपे आणि
+                        समजण्याजोगे केले आहे.
+                    </p>
+                    <div class="mentor-tags">
+                        <span class="tag">🏛️ Government Vendor</span>
+                        <span class="tag">📋 Tender Consultant</span>
+                        <span class="tag">🎓 Trainer</span>
+                        <span class="tag">💡 Business Mentor</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <div class="container">
+            <div style="text-align:center;">
+                <span class="section-label">यशोगाथा</span>
+                <h2 class="section-title">आमच्या विद्यार्थ्यांनी काय सांगितले?</h2>
+                <p class="section-sub" style="margin:0 auto;">महाराष्ट्रभरातील खऱ्या उद्योजकांचे खरे निकाल.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"Workshop नंतर ३ महिन्यांत पहिला government work order मिळाला.
+                        Harshad sir यांनी सर्वकाही इतक्या स्पष्टपणे सांगितले की मला अर्ज करताना आत्मविश्वास वाटला."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RK</div>
+                        <div>
+                            <div class="author-name">Rahul Kale</div>
+                            <div class="author-loc">Civil Contractor · पुणे</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"GeM registration यशस्वीरित्या पूर्ण केले आणि आधीच ३ purchase
+                        orders मिळाले. या workshop ने माझा व्यवसाय पूर्णपणे बदलून टाकला."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SP</div>
+                        <div>
+                            <div class="author-name">Sunita Patil</div>
+                            <div class="author-loc">MSME Owner · नाशिक</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-quote">"या workshop नंतर माझा Tender consultancy व्यवसाय सुरू केला. दिलेले
+                        practical ज्ञान आणि templates खरोखरच जागतिक दर्जाचे आहेत."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AM</div>
+                        <div>
+                            <div class="author-name">Amit Mane</div>
+                            <div class="author-loc">Entrepreneur · मुंबई</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div class="container">
+            <span class="section-label">Workshop अनुभव</span>
+            <h2 class="section-title">Live Training Sessions</h2>
+            <p class="section-sub">हजारो उद्योजकांनी आमच्या workshops द्वारे आपले व्यवसाय बदलले आहेत.</p>
+            <div class="gallery-grid">
+
+                <!--
+        ══════════════════════════════════════════════
+        GALLERY IMAGE INSTRUCTIONS
+        For each .gallery-item below, add your photo
+        URL as a style attribute like:
+        style="background-image:url('YOUR_URL_HERE');"
+        The fallback icon disappears automatically.
+        ══════════════════════════════════════════════
+      -->
+
+                <div class="gallery-item" style="background-image:url('GALLERY_PHOTO_1_MAIN_HALL_URL');">
+                    <div class="gallery-placeholder">🎤<span>Live Workshop Training</span></div>
+                    <div class="gallery-label">Live Workshop Training</div>
+                </div>
+                <div class="gallery-item" style="background-image:url('GALLERY_PHOTO_2_DEMO_URL');">
+                    <div class="gallery-placeholder">💻<span>Practical Demonstrations</span></div>
+                    <div class="gallery-label">Practical Demonstrations</div>
+                </div>
+                <div class="gallery-item" style="background-image:url('GALLERY_PHOTO_3_AWARD_URL');">
+                    <div class="gallery-placeholder">🏆<span>पुरस्कार सोहळा</span></div>
+                    <div class="gallery-label">पुरस्कार सोहळा</div>
+                </div>
+                <div class="gallery-item" style="background-image:url('GALLERY_PHOTO_4_STUDENTS_URL');">
+                    <div class="gallery-placeholder">🤝<span>विद्यार्थ्यांशी संवाद</span></div>
+                    <div class="gallery-label">विद्यार्थ्यांशी संवाद</div>
+                </div>
+                <div class="gallery-item" style="background-image:url('GALLERY_PHOTO_5_CERTIFICATE_URL');">
+                    <div class="gallery-placeholder">📜<span>प्रमाणपत्र वितरण</span></div>
+                    <div class="gallery-label">प्रमाणपत्र वितरण</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section id="benefits">
+        <div class="container">
+            <span class="section-label">तुम्हाला काय मिळेल?</span>
+            <h2 class="section-title">सर्वकाही समाविष्ट</h2>
+            <p class="section-sub">एक workshop. संपूर्ण toolkit. आजीवन support community.</p>
+            <div class="benefits-box">
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎓</div>
+                        <div>
+                            <div class="benefit-text">Workshop प्रवेश</div>
+                            <div class="benefit-sub">Full-day practical session</div>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📚</div>
+                        <div>
+                            <div class="benefit-text">Training Material</div>
+                            <div class="benefit-sub">Printed &amp; digital notes</div>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📄</div>
+                        <div>
+                            <div class="benefit-text">Templates</div>
+                            <div class="benefit-sub">Ready-to-use bid templates</div>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✅</div>
+                        <div>
+                            <div class="benefit-text">Checklists</div>
+                            <div class="benefit-sub">Document &amp; submission guides</div>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔗</div>
+                        <div>
+                            <div class="benefit-text">Tender Resources</div>
+                            <div class="benefit-sub">Portal guide &amp; references</div>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💬</div>
+                        <div>
+                            <div class="benefit-text">WhatsApp Support</div>
+                            <div class="benefit-sub">Workshop नंतर Q&amp;A group</div>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🏅</div>
+                        <div>
+                            <div class="benefit-text">प्रमाणपत्र</div>
+                            <div class="benefit-sub">Official completion certificate</div>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎯</div>
+                        <div>
+                            <div class="benefit-text">Expert मार्गदर्शन</div>
+                            <div class="benefit-sub">Direct access to mentor</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+        <div class="container" style="text-align:center;">
+            <span class="section-label">Workshop शुल्क</span>
+            <h2 class="section-title">सरळ आणि पारदर्शक किंमत</h2>
+            <p class="section-sub" style="margin:0 auto;">एकवेळचा खर्च — करोडोंचा सरकारी व्यवसाय उघडू शकतो.</p>
+            <div class="pricing-card">
+                <div class="pricing-badge">🔥 मर्यादित जागा उपलब्ध</div>
+                <div class="pricing-title">Tender Guru Full Workshop</div>
+                <div class="pricing-price">₹999</div>
+                <div class="pricing-original">नियमित किंमत: ₹3,999</div>
+                <div class="pricing-bonus">🎁 ₹5,000+ किमतीचे Bonus — Templates, Checklists आणि Resources FREE</div>
+                <button class="pricing-cta"
+                    onclick="document.querySelector('#final-cta').scrollIntoView({behavior:'smooth'})">माझी जागा
+                    आरक्षित करा →</button>
+                <div style="font-size:0.77rem;color:var(--muted);margin-bottom:14px;">🔒 Secure Payment · तात्काळ
+                    Confirmation</div>
+                <div class="payment-methods">
+                    <span class="pay-chip">📱 UPI</span>
+                    <span class="pay-chip">💳 Card</span>
+                    <span class="pay-chip">🏦 Net Banking</span>
+                    <span class="pay-chip">⚡ Razorpay</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <span class="section-label">वारंवार विचारले जाणारे प्रश्न</span>
+            <h2 class="section-title">तुमच्या मनातील प्रश्न</h2>
+            <p class="section-sub">सामील होण्यापूर्वी तुम्हाला जाणून घ्यायचे असलेले सर्व काही.</p>
+            <div class="faq-list">
+                <div class="faq-item open">
+                    <div class="faq-q" onclick="toggleFaq(this)">या workshop ला कोण येऊ शकतो? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">Civil contractors, engineers, MSME owners, तरुण आणि महिला उद्योजक, आणि सरकारी
+                        पुरवठादार — कोणीही येऊ शकतो. पूर्व अनुभव आवश्यक नाही.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">हे workshop online आहे की offline? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">आम्ही batch नुसार online आणि offline दोन्ही workshops आयोजित करतो. नोंदणीनंतर
+                        WhatsApp वर स्थान आणि format confirm केले जाईल.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">Training कोणत्या भाषेत आहे? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">Training प्रामुख्याने मराठी आणि हिंदीत होते, English technical terms
+                        स्पष्टपणे समजावून सांगितले जातात. प्रत्येकजण सहज समजू शकतो.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">मला कोणते documents किंवा पूर्व ज्ञान हवे आहे का?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-a">पूर्व ज्ञान आवश्यक नाही. फक्त smartphone किंवा laptop आणा. आम्ही अगदी मूलभूत
+                        गोष्टींपासून सुरुवात करतो आणि advanced concepts पर्यंत जातो.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">Workshop नंतर मला certificate मिळेल का? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">होय, प्रत्येक सहभागीला अधिकृत Tender Guru completion certificate मिळते जे
+                        तुमच्या professional profile साठी वापरता येते.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">GeM Portal Training मध्ये काय समाविष्ट आहे? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">आम्ही संपूर्ण GeM registration, product/service listing, order management,
+                        आणि GeM Portal वर सरकारी purchase orders कसे मिळवायचे हे सांगतो.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">Workshop नंतर support मिळेल का? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">होय! तुम्हाला आमच्या exclusive WhatsApp support group मध्ये add केले जाईल
+                        जिथे Harshad Barge आणि सहकारी alumni कडून मार्गदर्शन मिळेल.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">Payment कसे करायचे? <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-a">UPI, credit/debit card, net banking, आणि Razorpay द्वारे payment स्वीकारले
+                        जाते. Payment नंतर तात्काळ confirmation मिळेल.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">शुल्क परत मिळेल का? <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-a">आमच्याकडून workshop रद्द झाल्यास शुल्क पूर्णपणे परत केले जाईल. तुम्ही येऊ न
+                        शकल्यास, तुमची जागा पुढील batch मध्ये हस्तांतरित केली जाऊ शकते.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)">महिला उद्योजक सहभागी होऊ शकतात का? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-a">नक्कीच! आम्ही विशेषतः महिला उद्योजकांना प्रोत्साहित करतो. Workshop मध्ये
+                        महिला-चालित व्यवसायांसाठी विशेष MSME आणि सरकारी योजना देखील cover केल्या जातात.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="final-cta">
+        <div class="container">
+            <h2 class="final-cta-title">"तुमचा पहिला Tender<br>तुमचा व्यवसाय बदलू शकतो"</h2>
+            <p class="final-cta-sub">पुढील Tender Guru Workshop मध्ये सामील व्हा आणि थेट तज्ज्ञांकडून शिका ज्यांनी १
+                लाख+ उद्योजकांना सरकारी व्यवसायात यशस्वी केले.</p>
+            <div class="final-cta-btns">
+                <a href="#pricing" class="btn-white">📋 आजच जागा बुक करा</a>
+                <a href="https://wa.me/919999999999?text=नमस्कार, मला Tender Guru Workshop साठी नोंदणी करायची आहे"
+                    class="btn-wa" target="_blank">💬 WhatsApp करा</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>TenderGuru</h3>
+                    <p>सरकारी Tender प्रशिक्षणासाठी महाराष्ट्रातील सर्वात विश्वासू व्यासपीठ. 2008 पासून उद्योजकांना
+                        सक्षम करत आहोत.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn" title="YouTube">▶</a>
+                        <a href="#" class="social-btn" title="Instagram">📷</a>
+                        <a href="#" class="social-btn" title="Facebook">f</a>
+                        <a href="#" class="social-btn" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>संपर्क</h4>
+                    <a href="tel:+919999999999" class="footer-link">📞 +91 99999 99999</a>
+                    <a href="mailto:info@tenderguru.in" class="footer-link">✉️ info@tenderguru.in</a>
+                    <a href="#" class="footer-link">📍 पुणे, महाराष्ट्र</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="#audience" class="footer-link">हे कोणासाठी आहे?</a>
+                    <a href="#learn" class="footer-link">अभ्यासक्रम</a>
+                    <a href="#mentor" class="footer-link">Harshad Barge बद्दल</a>
+                    <a href="#pricing" class="footer-link">Workshop शुल्क</a>
+                    <a href="#faq" class="footer-link">प्रश्न व उत्तरे</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2025 Tender Guru. सर्व हक्क राखीव. | महाराष्ट्राच्या उद्योजकांसाठी तयार केलेले.
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/919999999999?text=नमस्कार, Tender Guru Workshop बद्दल अधिक जाणून घ्यायचे आहे"
+        class="wa-float" target="_blank" title="WhatsApp वर चॅट करा">💬</a>
+
+    <!-- STICKY BOTTOM -->
+    <div class="sticky-bottom">
+        <span class="sticky-cta-text">🔥 मर्यादित जागा</span>
+        <a href="#pricing" class="btn-primary">आत्ताच जागा बुक करा →</a>
+    </div>
+
+    <script>
+        function toggleFaq(el) {
+            const item = el.parentElement;
+            document.querySelectorAll('.faq-item').forEach(i => { if (i !== item) i.classList.remove('open'); });
+            item.classList.toggle('open');
+        }
+
+        // Hide gallery placeholder icons when real image is set
+        document.querySelectorAll('.gallery-item').forEach(el => {
+            const bg = el.style.backgroundImage || '';
+            const ph = el.querySelector('.gallery-placeholder');
+            if (ph && bg && !bg.includes('GALLERY_PHOTO')) {
+                ph.style.display = 'none';
+            }
+        });
+
+        // Hide mentor fallback when real image is set
+        document.querySelectorAll('.mentor-img-wrap,.hero-img-placeholder').forEach(el => {
+            const bg = el.style.backgroundImage || '';
+            const fallback = el.querySelector('.mentor-fallback');
+            if (fallback && bg && !bg.includes('YOUR_')) {
+                fallback.style.display = 'none';
+            }
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.audience-card,.learn-card,.testimonial-card,.number-item,.benefit-item,.failure-step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(14px)';
+            el.style.transition = 'opacity 0.5s ease,transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
